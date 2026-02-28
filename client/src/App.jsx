@@ -13,7 +13,7 @@ function App() {
   const [language,setLanguage]=useState("javascript")
   const [version,setVersion]=useState(63)
   const [code,setCode]=useState(STARTER_CODE[language]);
-  // console.log("now the version on App.jsx ",version); //this tells how many times the App.jsx render
+  console.log("now the version on App.jsx ",version);
   const onSelect=(lang,version)=>{
      setLanguage(lang)
      setVersion(version);
