@@ -1,7 +1,6 @@
 import React, {  useRef, useState } from 'react'
 import Editor from  '@monaco-editor/react'
 import { STARTER_CODE,Language_ID } from './constants';
-import { version } from 'vite';
 function CodeEditor({lang,code,boilerPlate,sendJsonMessage}) {
     const editorRef=useRef();
     const onMount=(editor)=>{
