@@ -9,9 +9,8 @@ function CodeEditor({lang,code,boilerPlate,sendJsonMessage}) {
     }
     // console.log("lang==>",lang);
     return (
-        <div className='w-full'>
+        <div className='w-full h-89 lg:h-[70vh]'>
         <Editor 
-        height="70vh"
          defaultLanguage='javascript'
           language={lang} 
           defaultValue={STARTER_CODE[lang]}
