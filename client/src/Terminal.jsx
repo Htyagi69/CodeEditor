@@ -41,7 +41,7 @@ import React,{useEffect, useState} from 'react'
        runCode()
     },[isclicked])
     return (
-         <div className='w-full bg-gray-800 text-white flex justify-baseline p-2  rounded-sm'>
+          <div className='w-full bg-gray-800 text-white flex justify-baseline p-2  rounded-sm h-80 lg:h-auto'>
          <textarea readOnly placeholder='test!!!'  className='w-full text p-2' value={output} />
        </div>
     )
