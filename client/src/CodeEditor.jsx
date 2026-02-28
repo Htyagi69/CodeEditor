@@ -1,6 +1,7 @@
 import React, {  useRef, useState } from 'react'
 import Editor from  '@monaco-editor/react'
-import { STARTER_CODE } from './constants';
+import { STARTER_CODE,Language_ID } from './constants';
+import { version } from 'vite';
 function CodeEditor({lang,code,boilerPlate,sendJsonMessage}) {
     const editorRef=useRef();
     const onMount=(editor)=>{
@@ -20,7 +21,7 @@ function CodeEditor({lang,code,boilerPlate,sendJsonMessage}) {
             theme='vs-dark'
              onChange={(newvalue)=>{
                 boilerPlate(newvalue)
-                sendJsonMessage({ type: 'change', content: newvalue,language:lang })
+                sendJsonMessage({ type: 'change', content: newvalue,language:lang ,version:Language_ID[lang]})
                 }} />
         </div>
     )
