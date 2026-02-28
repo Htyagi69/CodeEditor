@@ -72,10 +72,10 @@ const {sendJsonMessage,readyState}=useWebSocket(WS_URL,{
       <div className='border-4 flex flex-col p-2 rounded-2xl'>
           <div className='w-full bg-gray-700 flex justify-between rounded-sm'>
             <NativeSelectDemo lang={language} onSelect={onSelect} sendJsonMessage={sendJsonMessage} code={code}/>
-          <button className={`p-2 hover:cursor-pointer rounded-sm m-1 ${isclicked ? 'bg-white text-black ':'bg-blue-700 text-white'}`}
+          <button className={`p-2 hover:cursor-pointer rounded-sm m-1 sm:w-auto ${isclicked ? 'bg-white text-black ':'bg-blue-700 text-white'}`}
           onClick={()=>setisClicked(!isclicked)}>RUN Code</button>
           </div>
-        <div className='flex'>
+        <div className='flex flex-col lg:flex-row'>
          <CodeEditor lang={language} code={code} boilerPlate={boilerPlate} sendJsonMessage={sendJsonMessage}/>
          <Terminal language={language}  version={version} code={code} isclicked={isclicked} setisClicked={setisClicked}/>
         </div>
