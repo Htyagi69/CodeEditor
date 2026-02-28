@@ -20,10 +20,12 @@ socket.on('connection',(ws,req)=>{
         const message=JSON.parse(data);
         console.log("message from client =>",message);
         if(message.type==='change'){
+            console.log("langId =>",message.version);
             let payload=JSON.stringify({
                 type:message.type,
                 content:message.content,
                 lange:message.language,
+                version:message.version,
             })
         //Broadcast
         socket.clients.forEach((client)=>{

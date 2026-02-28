@@ -13,7 +13,7 @@ function App() {
   const [language,setLanguage]=useState("javascript")
   const [version,setVersion]=useState(63)
   const [code,setCode]=useState(STARTER_CODE[language]);
-  // console.log("langu2",language);
+  // console.log("now the version on App.jsx ",version); //this tells how many times the App.jsx render
   const onSelect=(lang,version)=>{
      setLanguage(lang)
      setVersion(version);
@@ -43,6 +43,7 @@ const {sendJsonMessage,readyState}=useWebSocket(WS_URL,{
             // console.log('yaha hoga asli khel',data.content);
             boilerPlate(data.content);
             setLanguage(data.lange)
+            setVersion(data.version)
              break;
          }
     }
@@ -60,6 +61,7 @@ const {sendJsonMessage,readyState}=useWebSocket(WS_URL,{
       type:'change',
       content:`${code}`,
       language:language,
+      version:version,
       state:readyState,
     })
   }
